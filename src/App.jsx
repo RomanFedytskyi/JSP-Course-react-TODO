@@ -1,29 +1,58 @@
 import React from 'react';
 import './App.css';
-import Todo from './components/Todo';
-import TodoForm from './components/TodoForm';
+import Todos from './pages/Todos';
+import Users from './pages/Users1';
+import Home from './pages/Home';
+import { BrowserRouter, Link, Route, Switch  } from "react-router-dom";
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    {text: 'learn JS'},
-    {text: 'learn React'},
-    {text: 'create App'}
-  ]);
-
-  const addTodo = text => {
-    setTodos([...todos, {text}]);
-  }
-
   return (
-    <div className="app">
-      <div className="todo-list">
-        {
-          todos.map((todo, index) => <Todo todo={todo} key={index}/>)
-        }
-        <TodoForm addTodo={addTodo}/>
+    <BrowserRouter>
+      <div className="app">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+          <ul className="nav navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/todos">Todos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/todos">
+            <Todos />
+          </Route>
+          <Route path="/users" component={Users} />
+          <Route path="*">
+            404 not found
+          </Route>
+        </Switch>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
+// function App() {
+//   const isAdmin = true;
+
+
+//   return (
+//     <BrowserRouter>
+//       <div className="app">
+//       {isAdmin ? <AdminRoutes /> : <UsersRoutes/>}
+//       </div>
+//     </BrowserRouter>
+//   );
+// }

@@ -4,14 +4,15 @@
   padding: 30px;
 }
 
-.todo-list {
+.todo-list, .user-list {
   background: #e8e8e8;
   border-radius: 4px;
   max-width: 400px;
   padding: 5px;
+  margin-right: 40px;
 }
 
-.todo {
+.todo, .user {
   align-items: center;
   background: #fff;
   border-radius: 3px;
@@ -21,4 +22,15 @@
   justify-content: space-between;
   margin-bottom: 6px;
   padding: 3px 10px;
+}
+
+.users {
+  display: flex !important;
+  width: 500px;
+  justify-content: space-between;
+}
+
+.users-page {
+  display: flex;
+  justify-content: space-between;
 }
