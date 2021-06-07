@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Todos from './pages/Todos';
-import Users from './pages/Users1';
+import Users from './pages/Users';
 import Home from './pages/Home';
 import { BrowserRouter, Link, Route, Switch  } from "react-router-dom";
+import 'antd/dist/antd.css';
 
 function App() {
   return (

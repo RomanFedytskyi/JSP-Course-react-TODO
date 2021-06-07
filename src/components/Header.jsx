@@ -229,35 +229,35 @@ import React from 'react';
 
 // componentWillUnmount()
 // The componentWillUnmount method is called when the component is about to be removed from the DOM.
-// class Header extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       hide: false,
-//       color: 'red',
-//       show: true
-//     };
-//   }
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hide: false,
+      color: 'red',
+      show: true
+    };
+  }
 
-//   delHeader = () => {
-//     this.setState({show: !this.state.show});
-//   }
+  delHeader = () => {
+    this.setState({show: !this.state.show});
+  }
 
-//   render() {
-//     let myheader;
-//     if (this.state.show) {
-//       myheader = <Child />;
-//     };
+  render() {
+    let myheader;
+    if (this.state.show) {
+      myheader = <Child />;
+    };
 
-//     return (
-//       <div>
-//       {myheader}
-//       <button type="button" onClick={this.delHeader}>Delete Header</button>
-//       <div>{this.state.color}</div>
-//       </div>
-//     );
-//   }
-// }
+    return (
+      <div>
+      {myheader}
+      <button type="button" onClick={this.delHeader}>Delete Header</button>
+      <div>{this.state.color}</div>
+      </div>
+    );
+  }
+}
 
 // class Child extends React.Component {
 //   componentWillUnmount() {
